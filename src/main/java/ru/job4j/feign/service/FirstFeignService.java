@@ -22,4 +22,9 @@ public class FirstFeignService {
         ResponseEntity<String> stringResponseEntity = client.getExc();
         return stringResponseEntity.getBody();
     }
+
+    public String getHead(String nameCourses) {
+        ResponseEntity<String> stringResponseEntity = client.head(nameCourses);
+        return stringResponseEntity.getBody();
+    }
 }

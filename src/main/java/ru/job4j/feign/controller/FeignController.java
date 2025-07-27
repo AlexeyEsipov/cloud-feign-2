@@ -26,4 +26,10 @@ public class FeignController {
         String line = firstService.getExc();
         return new ResponseEntity<>(line, HttpStatus.OK);
     }
+
+    @GetMapping("/firstperson/head/{header}")
+    public ResponseEntity<String> head(@PathVariable String header) {
+        String line = firstService.getHead(header);
+        return new ResponseEntity<>(line, HttpStatus.OK);
+    }
 }
