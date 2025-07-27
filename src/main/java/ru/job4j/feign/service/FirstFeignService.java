@@ -6,6 +6,7 @@ import ru.job4j.feign.model.Person;
 
 @Service
 public class FirstFeignService {
+
     private final FeignServiceClient client;
 
     public FirstFeignService(FeignServiceClient client) {
@@ -14,6 +15,11 @@ public class FirstFeignService {
 
     public String firstCreatePerson(Long personId, Person person) {
         ResponseEntity<String> stringResponseEntity = client.firstCreatePerson(personId, person);
+        return stringResponseEntity.getBody();
+    }
+
+    public String getExc() {
+        ResponseEntity<String> stringResponseEntity = client.getExc();
         return stringResponseEntity.getBody();
     }
 }
