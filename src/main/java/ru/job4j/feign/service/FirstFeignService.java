@@ -14,7 +14,8 @@ public class FirstFeignService {
     }
 
     public String firstCreatePerson(Long personId, Person person) {
-        ResponseEntity<String> stringResponseEntity = client.firstCreatePerson(personId, person);
+        ResponseEntity<String> stringResponseEntity =
+                client.firstCreatePerson(personId, person);
         return stringResponseEntity.getBody();
     }
 
@@ -24,7 +25,8 @@ public class FirstFeignService {
     }
 
     public String getHead(String nameCourses) {
-        ResponseEntity<String> stringResponseEntity = client.head(nameCourses);
+        ResponseEntity<String> stringResponseEntity =
+                client.head(nameCourses);
         return stringResponseEntity.getBody();
     }
 }
