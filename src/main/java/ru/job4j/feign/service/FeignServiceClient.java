@@ -10,11 +10,13 @@ public interface FeignServiceClient {
 
 
     @PostMapping("one/person/{personId}")
-    ResponseEntity<String> firstCreatePerson(@PathVariable Long personId, @RequestBody Person person);
+    ResponseEntity<String> firstCreatePerson(@PathVariable Long personId,
+                                             @RequestBody Person person);
 
     @GetMapping("one/person/exc")
     ResponseEntity<String> getExc();
 
     @GetMapping("one/person/head")
-    ResponseEntity<String> head(@RequestHeader(name = "X-Name-Courses") String nameCourses);
+    ResponseEntity<String> head(@RequestHeader(name = "X-Name-Courses")
+                                String nameCourses);
 }
